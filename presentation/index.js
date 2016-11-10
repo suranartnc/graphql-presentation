@@ -57,14 +57,15 @@ export default class Presentation extends React.Component {
         <Deck transition={["zoom", "slide"]} transitionDuration={250}>
 
           {/* Topic */}
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={2} fit caps lineHeight={1} textColor="black">
-              Relay vs Apollo
-            </Heading>
-            <Heading size={1} fit>
+          <Slide transition={["spin", "slide"]} bgColor="tertiary">
+            <Heading caps textSize="2em" lineHeight={1.5} textColor="primary">
               The GraphQL Battle
             </Heading>
+            <Heading textSize="4.2em" lineHeight={1.0} textColor="black">
+              RELAY vs APOLLO
+            </Heading>
           </Slide>
+
 
           {/* Question */}
           <Slide transition={["zoom", "fade"]} bgColor="black" notes="Problem with REST API">
@@ -73,6 +74,7 @@ export default class Presentation extends React.Component {
               What's wrong with REST API ?
             </Heading>
           </Slide>
+
 
           {/* Code */}
           <Slide transition={["zoom", "fade"]} bgColor="bgCode" notes="">
@@ -220,7 +222,7 @@ export default class Presentation extends React.Component {
 
           </Slide>
 
-
+          {/* Quote */}
           <Slide transition={["slide"]} bgColor="black">
             <BlockQuote>
               <Quote>Wonderfully formatted quotes</Quote>
@@ -228,7 +230,8 @@ export default class Presentation extends React.Component {
             </BlockQuote>
           </Slide>
 
-
+          {/* Markdown */}
+          {/*
           <Slide transition={["spin", "zoom"]} bgColor="tertiary">
             <Heading caps fit size={1} textColor="primary">
               Inline Markdown
@@ -244,36 +247,26 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               `}
             </Markdown>
           </Slide>
+          */}
 
-
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-
-
+          {/* List */}
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
+              <Appear><ListItem>Single Request</ListItem></Appear>
+              <Appear><ListItem>Flexible</ListItem></Appear>
+              <Appear><ListItem>Caching</ListItem></Appear>
             </List>
           </Slide>
 
-
+          {/* React component */}
+          {/*
           <Slide transition={["slide"]} bgColor="primary">
             <Heading size={1} caps fit textColor="tertiary">
               Your presentations are interactive
             </Heading>
             <Interactive/>
           </Slide>
+          */}
 
 
           <Slide transition={["spin", "slide"]} bgColor="tertiary">
