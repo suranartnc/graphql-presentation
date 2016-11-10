@@ -46,7 +46,8 @@ const images = {
 preloader(images);
 
 const theme = createTheme({
-  primary: "#ff4081"
+  primary: "#888",
+  bgCode: "#2d2d2d"
 });
 
 export default class Presentation extends React.Component {
@@ -57,35 +58,28 @@ export default class Presentation extends React.Component {
 
 
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1} textColor="black">
-              Spectacle
+            <Heading size={2} fit caps lineHeight={1} textColor="black">
+              Relay vs Apollo
             </Heading>
-            <Heading size={1} fit caps>
-              A ReactJS Presentation Library
+            <Heading size={1} fit>
+              The GraphQL Battle
             </Heading>
-            <Heading size={1} fit caps textColor="black">
-              Where You Can Write Your Decks In JSX
-            </Heading>
-            <Link href="https://github.com/FormidableLabs/spectacle">
-              <Text bold caps textColor="tertiary">View on Github</Text>
-            </Link>
-            <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
           </Slide>
 
-
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+          
+          <Slide transition={["slide"]} bgColor="black" notes="Problem with REST API">
             <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              Wait what?
+            <Heading size={2} caps textColor="primary" textFont="primary">
+              What's wrong with REST API ?
             </Heading>
           </Slide>
 
 
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Slide transition={["zoom", "fade"]} bgColor="bgCode" notes="">
             <CodePane
-              lang="jsx"
+              lang="javascript"
               source={require("raw!../assets/deck.example")}
-              margin="20px auto"
+              textSize={'0.8em'}
             />
           </Slide>
 
@@ -188,7 +182,7 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
             <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
           </Slide>
 
-          
+
         </Deck>
       </Spectacle>
     );
