@@ -2,8 +2,11 @@
   articles {
     id
     title
-    body
     author
     date
+  }
+  member(id: "1") {
+    displayName
+    avatar
   }
 }

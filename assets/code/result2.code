@@ -1,0 +1,12 @@
+{
+  "data": {
+    "articles": [
+      {
+        "id": 1,
+        "title": "Relay vs Apollo",
+        "author": "Suranart Niamcome",
+        "date": "Today"
+      }
+    ]
+  }
+}

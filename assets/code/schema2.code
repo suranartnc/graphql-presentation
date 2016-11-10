@@ -1,0 +1,8 @@
+const PostType = new GraphQLObjectType({
+  name: "Post",
+  fields: () => ({
+    _id: {type: new GraphQLNonNull(GraphQLString)},
+    title: {type: new GraphQLNonNull(GraphQLString)},
+    content: {type: GraphQLString}
+  })
+});

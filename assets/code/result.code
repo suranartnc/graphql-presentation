@@ -1,0 +1,20 @@
+{
+  "data": {
+    "articles": [
+      {
+        "id": 1,
+        "title": "Relay vs Apollo",
+        "body": "Some interesting stuffs...",
+        "comments": [
+          {
+            "body": "Awesome Post!",
+            "author": "Guest",
+            "date": "Today"
+          }
+        ],
+        "author": "Suranart Niamcome",
+        "date": "Today"
+      }
+    ]
+  }
+}

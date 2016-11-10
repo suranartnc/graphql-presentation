@@ -1,0 +1,17 @@
+const RootFields = new GraphQLObjectType({
+  name: 'BlogSchema',
+  fields: () => ({
+    posts: {
+      type: new GraphQLList(PostType),
+
+      // fetch from data source, REST API or whatever you want!
+      resolve: function() {
+        return PostsList;
+      }
+    }
+  })
+});
+
+const Schema = new GraphQLSchema({
+  query: RootFields
+});

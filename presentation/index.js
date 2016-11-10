@@ -40,7 +40,8 @@ const images = {
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/markdown.png"),
+  diagram1: require("../assets/how-graphql-works.png")
 };
 
 preloader(images);
@@ -54,7 +55,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={250}>
+        <Deck transitionDuration={250}>
 
           {/* Topic */}
           <Slide transition={["spin", "slide"]} bgColor="tertiary">
@@ -67,6 +68,25 @@ export default class Presentation extends React.Component {
           </Slide>
 
 
+          {/* REST API */}
+          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>         
+            <Heading size={1} caps textColor="primary">
+              GET
+            </Heading>
+            <Heading size={1} caps textColor="tertiary">
+              POST
+            </Heading>
+            <Heading size={1} caps textColor="primary">
+              PUT
+            </Heading>
+            <Heading size={1} caps textColor="tertiary">
+              PATCH
+            </Heading>
+            <Heading size={1} caps textColor="primary">
+              DELETE
+            </Heading>
+          </Slide>
+
           {/* Question */}
           <Slide transition={["zoom", "fade"]} bgColor="black" notes="Problem with REST API">
             {/* <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/> */}
@@ -75,15 +95,44 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-
           {/* Code */}
-          <Slide transition={["zoom", "fade"]} bgColor="bgCode" notes="">
+          <Slide bgColor="bgCode" notes="">
             <CodePane
               lang="javascript"
-              source={require("raw!../assets/deck.example")}
+              source={require("raw!../assets/code/query.code")}
               textSize={'1em'}
             />
           </Slide>
+
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/result.code")}
+              textSize={'0.6em'}
+            />
+          </Slide>
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/query2.code")}
+              textSize={'1em'}
+            />
+          </Slide>
+
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/result2.code")}
+              textSize={'0.6em'}
+            />
+          </Slide>
+
 
 
           <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
@@ -107,6 +156,116 @@ export default class Presentation extends React.Component {
             </Appear>
 
           </Slide>
+
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/query3.code")}
+              textSize={'1em'}
+            />
+          </Slide>
+
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/result3.code")}
+              textSize={'0.6em'}
+            />
+          </Slide>
+
+
+          {/* Question */}
+          <Slide transition={["zoom", "fade"]} bgColor="tertiary" notes="">
+            {/* <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/> */}
+            <Heading size={2} caps textColor="primary" textFont="primary">
+              What's about
+            </Heading>
+            <Heading size={2} caps textColor="black" textFont="primary">
+              Security ?
+            </Heading>
+          </Slide>
+
+          
+
+          {/* Diagram */}
+          <Slide transition={["zoom", "fade"]} bgColor="tertiary" notes="">
+            <Image src={images.diagram1.replace("/", "")} margin="0px auto" width="100vh" height="auto"/>
+          </Slide>
+
+
+          
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/express_graphql.code")}
+              textSize={'0.6em'}
+            />
+          </Slide>
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/schema2.code")}
+              textSize={'0.6em'}
+            />
+          </Slide>
+
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/schema1.code")}
+              textSize={'0.6em'}
+            />
+          </Slide>
+
+          
+          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+            
+            <Appear fid="1">
+              <Heading size={1} caps textColor="primary">
+                Caching
+              </Heading>
+            </Appear>
+
+            <Appear fid="2">
+              <Heading size={1} caps textColor="tertiary">
+                Pagination
+              </Heading>
+            </Appear>
+
+            <Appear fid="3">
+              <Heading size={1} caps textColor="primary">
+                Mutation
+              </Heading>
+            </Appear>
+
+            <Appear fid="3">
+              <Heading size={1} caps textColor="tertiary">
+                Optimistic
+              </Heading>
+            </Appear>
+
+            <Appear fid="3">
+              <Heading size={1} caps textColor="primary">
+                Refetch
+              </Heading>
+            </Appear>
+
+          </Slide>
+          
+
+
+
+
+
 
 
           <Slide transition={["zoom", "fade"]} bgColor="primary">
@@ -230,24 +389,7 @@ export default class Presentation extends React.Component {
             </BlockQuote>
           </Slide>
 
-          {/* Markdown */}
-          {/*
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-          */}
+          
 
           {/* List */}
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -258,25 +400,7 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
             </List>
           </Slide>
 
-          {/* React component */}
-          {/*
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-          */}
-
-
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
-          </Slide>
-
-
+        
         </Deck>
       </Spectacle>
     );

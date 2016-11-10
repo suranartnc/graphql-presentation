@@ -1,0 +1,16 @@
+{
+  "data": {
+    "articles": [
+      {
+        "id": 1,
+        "title": "Relay vs Apollo",
+        "author": "Suranart Niamcome",
+        "date": "Today"
+      }
+    ],
+    "member": {
+      "displayName": "Tae",
+      "avatar": "http://www.somedomain.com/somepic.png",
+    }
+  }
+}
