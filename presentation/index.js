@@ -54,9 +54,9 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+        <Deck transition={["zoom", "slide"]} transitionDuration={250}>
 
-
+          {/* Topic */}
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={2} fit caps lineHeight={1} textColor="black">
               Relay vs Apollo
@@ -66,57 +66,158 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-          
-          <Slide transition={["slide"]} bgColor="black" notes="Problem with REST API">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
+          {/* Question */}
+          <Slide transition={["zoom", "fade"]} bgColor="black" notes="Problem with REST API">
+            {/* <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/> */}
             <Heading size={2} caps textColor="primary" textFont="primary">
               What's wrong with REST API ?
             </Heading>
           </Slide>
 
-
+          {/* Code */}
           <Slide transition={["zoom", "fade"]} bgColor="bgCode" notes="">
             <CodePane
               lang="javascript"
               source={require("raw!../assets/deck.example")}
-              textSize={'0.8em'}
+              textSize={'1em'}
             />
           </Slide>
 
 
           <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+            
             <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
+              <Heading size={1} caps textColor="primary">
+                Flexible
               </Heading>
             </Appear>
+
             <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
+              <Heading size={1} caps textColor="tertiary">
+                Single Request
               </Heading>
             </Appear>
+
             <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
+              <Heading size={1} caps textColor="primary">
+                Caching
               </Heading>
             </Appear>
+
           </Slide>
 
 
           <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
+            <Heading fit>Relay vs Apollo</Heading>
+
             <Layout>
               <Fill>
                 <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
+                  Concept
                 </Heading>
               </Fill>
               <Fill>
                 <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
+                  Declarative
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Incrementally adoptable
                 </Heading>
               </Fill>
             </Layout>
+
+            <Layout>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Caching
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  server-side ID
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  client-side ID
+                </Heading>
+              </Fill>
+            </Layout>
+
+            <Layout>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Pagination
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  curser-based
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  arbitary
+                </Heading>
+              </Fill>
+            </Layout>
+
+            <Layout>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Compatibility
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  React
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  React, Vue, Angular 2
+                </Heading>
+              </Fill>
+            </Layout>
+
+            <Layout>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Mutation
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Config
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Reducer
+                </Heading>
+              </Fill>
+            </Layout>
+
+            <Layout>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Documentation
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  T__T
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  :P
+                </Heading>
+              </Fill>
+            </Layout>
+
           </Slide>
 
 
