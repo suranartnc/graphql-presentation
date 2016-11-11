@@ -1,0 +1,8 @@
+mutation {
+  addArticle(title: "Title", body: "Body", author: "Tae") {
+    id
+    title
+    body
+    author
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "data": {
+    "addArticle": {
+      "id": "1",
+      "title": "Title",
+      "body": "Body",
+      "author": "Tae"
+    }
+  }
+}

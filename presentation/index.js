@@ -41,7 +41,9 @@ const images = {
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
-  diagram1: require("../assets/how-graphql-works.png")
+  diagram1: require("../assets/how-graphql-works.png"),
+  diagram2: require("../assets/rest_vs_graphql.png"),
+  diagram3: require("../assets/graphql_using_REST.png")
 };
 
 preloader(images);
@@ -95,6 +97,22 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
+
+          {/* Quote */}
+          <Slide transition={["slide"]} bgColor="black">
+            <BlockQuote>
+              <Quote>Instead of defining the structure of responses on the server, the flexibility is given to the client. 
+</Quote>
+              <Cite>Petr Bela</Cite>
+            </BlockQuote>
+          </Slide>
+
+          {/* Diagram */}
+          <Slide transition={["zoom", "fade"]} bgColor="tertiary" notes="">
+            <Image src={images.diagram2.replace("/", "")} margin="0px auto" width="100vh" height="auto"/>
+          </Slide>
+
+
           {/* Code */}
           <Slide bgColor="bgCode" notes="">
             <CodePane
@@ -134,30 +152,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
 
-
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            
-            <Appear fid="1">
-              <Heading size={1} caps textColor="primary">
-                Flexible
-              </Heading>
-            </Appear>
-
-            <Appear fid="2">
-              <Heading size={1} caps textColor="tertiary">
-                Single Request
-              </Heading>
-            </Appear>
-
-            <Appear fid="3">
-              <Heading size={1} caps textColor="primary">
-                Caching
-              </Heading>
-            </Appear>
-
-          </Slide>
-
-
           {/* Code */}
           <Slide bgColor="bgCode" notes="">
             <CodePane
@@ -173,6 +167,26 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="javascript"
               source={require("raw!../assets/code/result3.code")}
+              textSize={'0.6em'}
+            />
+          </Slide>
+
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/query4.code")}
+              textSize={'0.8em'}
+            />
+          </Slide>
+
+
+          {/* Code */}
+          <Slide bgColor="bgCode" notes="">
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/code/result4.code")}
               textSize={'0.6em'}
             />
           </Slide>
@@ -196,8 +210,24 @@ export default class Presentation extends React.Component {
             <Image src={images.diagram1.replace("/", "")} margin="0px auto" width="100vh" height="auto"/>
           </Slide>
 
-
+          {/* Diagram */}
+          <Slide transition={["zoom", "fade"]} bgColor="tertiary" notes="">
+            <Image src={images.diagram3.replace("/", "")} margin="0px auto" width="100vh" height="auto"/>
+          </Slide>
           
+
+          {/* Question */}
+          <Slide transition={["zoom", "fade"]} bgColor="black" notes="Problem with REST API">
+            {/* <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/> */}
+            <Heading size={2} caps textColor="primary" textFont="primary">
+              How to create a
+            </Heading>
+            <Heading size={2} caps textColor="tertiary" textFont="primary">
+              GraphQL Server ?
+            </Heading>
+          </Slide>
+
+
           {/* Code */}
           <Slide bgColor="bgCode" notes="">
             <CodePane
@@ -205,6 +235,17 @@ export default class Presentation extends React.Component {
               source={require("raw!../assets/code/express_graphql.code")}
               textSize={'0.6em'}
             />
+          </Slide>
+
+          {/* Question */}
+          <Slide transition={["zoom", "fade"]} bgColor="black" notes="Problem with REST API">
+            {/* <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/> */}
+            <Heading size={2} caps textColor="primary" textFont="primary">
+              So we need a
+            </Heading>
+            <Heading size={2} caps textColor="tertiary" textFont="primary">
+              Schema
+            </Heading>
           </Slide>
 
           {/* Code */}
@@ -226,6 +267,44 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
+          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+            
+            <Appear fid="1">
+              <Heading size={1} caps textColor="primary">
+                Single Request
+              </Heading>
+            </Appear>
+
+            <Appear fid="2">
+              <Heading size={1} caps textColor="tertiary">
+                Smallest Response
+              </Heading>
+            </Appear>
+
+            <Appear fid="3">
+              <Heading size={1} caps textColor="primary">
+                Predictable Data
+              </Heading>
+            </Appear>
+
+          </Slide>
+
+
+          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+            
+            <Appear fid="1">
+              <Heading size={1} caps textColor="primary">
+                Need a schema
+              </Heading>
+            </Appear>
+
+            <Appear fid="2">
+              <Heading size={1} caps textColor="tertiary">
+                Code just move from front-end to back-end
+              </Heading>
+            </Appear>
+
+          </Slide>
           
           <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
             
@@ -247,15 +326,9 @@ export default class Presentation extends React.Component {
               </Heading>
             </Appear>
 
-            <Appear fid="3">
+            <Appear fid="4">
               <Heading size={1} caps textColor="tertiary">
                 Optimistic
-              </Heading>
-            </Appear>
-
-            <Appear fid="3">
-              <Heading size={1} caps textColor="primary">
-                Refetch
               </Heading>
             </Appear>
 
@@ -381,13 +454,7 @@ export default class Presentation extends React.Component {
 
           </Slide>
 
-          {/* Quote */}
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
+          
 
           
 
@@ -395,7 +462,7 @@ export default class Presentation extends React.Component {
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <List>
               <Appear><ListItem>Single Request</ListItem></Appear>
-              <Appear><ListItem>Flexible</ListItem></Appear>
+              <Appear><ListItem>Smallest Response</ListItem></Appear>
               <Appear><ListItem>Caching</ListItem></Appear>
             </List>
           </Slide>
